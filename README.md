@@ -1,6 +1,6 @@
 
 <h1 align="center">
-    <a href="https://pt-br.reactjs.org/">🔗 WEBJUMP</a>
+    <a href="https://webjump.com.br/">🔗 WEBJUMP</a>
 </h1>
 <p align="center">🚀 Teste para contratação webjump </p
 
@@ -19,16 +19,6 @@ Este projeto usa muitas coisas como:
 - [Prettier](https://prettier.io/)
 - [Husky](https://github.com/typicode/husky)
 
-## Começando
-
-Primeiro, execute o servidor de desenvolvimento:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
 <h4 align="center">
 	🚧  WEBJUMP 🚀 Em construção...  🚧
 </h4>
@@ -41,6 +31,16 @@ yarn dev
 - [x] Styles
 - [ ] Jest
 - [ ] Storybook
+
+## Começando
+
+Primeiro, execute o servidor de desenvolvimento:
+
+```bash
+npm run dev
+# or
+yarn dev
+```
 
 Abra [http://localhost:3000](http://localhost:3000) com seu navegador para ver o resultado.
 
