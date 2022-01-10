@@ -3,19 +3,21 @@ import styled from 'styled-components'
 export const Wrapper = styled.div`
   background: #231f20;
   width: 100%;
-  max-width: 1200px;
   height: 31px;
+  display: flex;
+  justify-content: center;
 `
 
 export const ListItem = styled.ul`
   display: flex;
   align-items: center;
   justify-content: end;
-  padding: 5px 0px;
+  padding: 5px 40px;
   width: 100%;
-  max-width: 1100px;
+  max-width: 1240px;
   @media (max-width: 768px) {
     justify-content: center;
+    padding: 5px 0;
   }
 `
 
@@ -30,6 +32,7 @@ export const Item = styled.a`
   font-size: 14px;
   font-weight: bold;
   text-decoration: underline;
+  cursor: pointer;
 `
 
 export const Separator = styled.p`

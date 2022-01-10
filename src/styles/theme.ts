@@ -22,7 +22,13 @@ export default {
     }
   },
   colors: {
-    primary: '#CB0D1F'
+    primary: '#CB0D1F',
+    ligthRed: '#ED1A39',
+    ligthGray: '#E2DEDC',
+    darkGray: '#ACACAC',
+    darkBlack: '#000000',
+    ligthBlack: '#1E2B50',
+    ligthBlu: '#00A8A9'
   },
   spacings: {
     xxsmall: '0.8rem',
