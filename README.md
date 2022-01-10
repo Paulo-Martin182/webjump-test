@@ -34,7 +34,7 @@ Este projeto usa muitas coisas como:
 
 ## Começando
 
-Primeiro, execute o servidor de desenvolvimento:
+Primeiro, garanta que o backend esteja rodando na porta localhost:8888 e então rode o servidor:
 
 ```bash
 npm run dev
