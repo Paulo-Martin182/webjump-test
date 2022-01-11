@@ -29,7 +29,9 @@ Este projeto usa muitas coisas como:
 de categorias, e para a busca de dados como os produtos estou utilizando Renderização do Lado do Servidor (SSR).
 
     No fetch do menu recebo um path do server, e coloco como link e para renderizar os itens de cada categoria
-estou utilizando paginas dinamicas baseadas no ID do path menu, e com esse ID eu consigo buscar os itens da categoria
+estou utilizando paginas dinamicas baseadas no ID do path menu, e com esse ID eu consigo buscar os itens da categoria.
+utilizei o SSR nos itens apenas para mostrar a renderizção do lado servidor... acredito que para uma gama de produtos,
+fixos seria melhor uma renderização statica para não pesar o server, mas como são poucos itens é isso :)
 
     Na lista de produtos podem ser ordenadas de varias formas, pode ser mostradas como LIST ou GRID.
 
