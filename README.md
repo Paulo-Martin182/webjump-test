@@ -93,7 +93,7 @@ aqui esta uma demonstração em imagem >
 - [x] Cor do circulo background
 - [x] Titulo da opção
 
-![alt text](https://github.com/Paulo-Martin182/webjump-test/public/storyex.png)
+![alt text](https://github.com/Paulo-Martin182/webjump-test/blob/master/public/storyex.png)
 
 
 ## Saber mais
