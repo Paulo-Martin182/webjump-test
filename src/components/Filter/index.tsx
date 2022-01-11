@@ -29,8 +29,8 @@ const Filter = ({
   const filterGender = filterType?.gender
   const router = useRouter()
 
-  const PushLink = (link: number | string, path: string) => {
-    router.push(`/categoria/${path}?id=${link}`)
+  const PushLink = (link: number | string) => {
+    router.push(`/categoria/${link}`)
   }
 
   return (
@@ -39,7 +39,7 @@ const Filter = ({
       <S.TitleCategory>Categorias</S.TitleCategory>
       <S.List>
         {categories.map((item) => (
-          <S.Item key={item.id} onClick={() => PushLink(item.id, item.name)}>
+          <S.Item key={item.id} onClick={() => PushLink(item.id)}>
             <S.Text>{item.name}</S.Text>
           </S.Item>
         ))}
