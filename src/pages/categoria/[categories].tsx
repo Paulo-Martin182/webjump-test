@@ -1,5 +1,7 @@
 import CategoriesTemplate from 'templates/categories'
 
+const BACKEND_API = process.env.API_BACKEND
+
 type filterTypes = {
   color?: string
 }
@@ -27,8 +29,8 @@ export const getServerSideProps = async (ctx: {
 }) => {
   const id = ctx.query?.id
   const pathName = ctx.query?.categories
-  const res = await fetch(`http://localhost:8888/api/V1/categories/${id}`)
-  const menuList = await fetch('http://localhost:8888/api/V1/categories/list')
+  const res = await fetch(`${BACKEND_API}/api/categorias/items/${id}`)
+  const menuList = await fetch(`${BACKEND_API}/api/categorias/list`)
   const data: ProductPerCategoryTypes = await res.json()
   const categoriesMenu = await menuList.json()
   return {

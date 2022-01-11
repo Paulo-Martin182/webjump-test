@@ -3,6 +3,8 @@ import { ProductTypes } from 'pages/categoria/[categories]'
 import { ChangeEvent, useEffect, useState } from 'react'
 import { OrderBy } from 'utils/FormatterOrder'
 
+const PUBLIC_API = process.env.NEXT_PUBLIC_API
+
 export type ProductsGridTypes = {
   products: ProductTypes[]
 }
@@ -53,7 +55,7 @@ const ProductGrid = ({ products }: ProductsGridTypes) => {
         {productOrderBy.map((item) => (
           <S.CardProduct key={item.id}>
             <S.ImageProduct>
-              <S.Image src={'http://localhost:8888/' + item.image} />
+              <S.Image src={PUBLIC_API + item.image} />
             </S.ImageProduct>
 
             <S.TitleProduct> {item.name}</S.TitleProduct>

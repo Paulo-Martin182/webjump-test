@@ -1,4 +1,7 @@
 import styled, { css } from 'styled-components'
+import { CardTypes } from '.'
+
+export type CardStylesTypes = Pick<CardTypes, 'colors' | 'backgroundColor'>
 
 export const Wrapper = styled.main``
 
@@ -55,63 +58,65 @@ export const ColorSelect = styled.div`
   visibility: hidden;
 `
 
-export const Card = styled.div`
-  position: relative;
-  width: 250px;
-  height: 270px;
-  background: #232323;
-  border-radius: 20px;
-  overflow: hidden;
-  margin: 5px 10px;
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #9bdc28;
-    clip-path: circle(150px at 80% 20%);
-    transition: 0.5s ease-in-out;
-  }
-
-  &:after {
-    content: 'Nike';
-    position: absolute;
-    top: 30%;
-    left: -15%;
-    font-size: 17em;
-    font-weight: 800;
-    font-style: italic;
-    color: rgba(255, 255, 255, 0.04);
-  }
-
-  &:hover {
-    ${ImgBx} {
-      top: 0%;
-      transform: translateY(-100%);
-    }
-    ${ContentBx} {
-      height: 210px;
-    }
-
-    ${Button} {
-      opacity: 1;
-      transform: translateY(20px);
-      transition-delay: 0.7s;
-    }
-
-    ${ColorSelect} {
-      opacity: 1;
-      visibility: visible;
-      transition-delay: 0.5s;
-    }
+export const Card = styled.div<CardStylesTypes>`
+  ${({ backgroundColor }) => css`
+    position: relative;
+    width: 250px;
+    height: 270px;
+    background: #232323;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 5px 10px;
 
     &:before {
-      clip-path: circle(300px at 80% -20%);
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: ${backgroundColor ? backgroundColor : 'black'};
+      clip-path: circle(150px at 80% 20%);
+      transition: 0.5s ease-in-out;
     }
-  }
+
+    &:after {
+      content: 'Nike';
+      position: absolute;
+      top: 30%;
+      left: -15%;
+      font-size: 17em;
+      font-weight: 800;
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.04);
+    }
+
+    &:hover {
+      ${ImgBx} {
+        top: 0%;
+        transform: translateY(-100%);
+      }
+      ${ContentBx} {
+        height: 210px;
+      }
+
+      ${Button} {
+        opacity: 1;
+        transform: translateY(20px);
+        transition-delay: 0.7s;
+      }
+
+      ${ColorSelect} {
+        opacity: 1;
+        visibility: visible;
+        transition-delay: 0.5s;
+      }
+
+      &:before {
+        clip-path: circle(300px at 80% -20%);
+      }
+    }
+  `}
 `
 
 export const TitleContent = styled.h2`
@@ -130,14 +135,16 @@ export const OptionTitle = styled.h3`
   letter-spacing: 2px;
   margin-right: 10px;
 `
-export const ItemsOptions = styled.span`
-  width: 20px;
-  height: 20px;
-  &:last-child {
-    background: green;
-  }
-  background: #c4c;
-  border-radius: 50%;
-  margin: 0 5px;
-  cursor: pointer;
+export const ItemsOptions = styled.span<CardStylesTypes>`
+  ${({ colors }) => css`
+    width: 20px;
+    height: 20px;
+    &:last-child {
+      background: green;
+    }
+    background: ${colors ? colors : 'blue'};
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+  `}
 `

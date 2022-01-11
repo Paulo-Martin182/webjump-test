@@ -1,6 +1,8 @@
 import HomeTemplate from 'templates/home'
 import { InferGetStaticPropsType } from 'next'
 
+const BACKEND_API = process.env.API_BACKEND
+
 export default function Home({
   categories
 }: InferGetStaticPropsType<typeof getStaticProps>) {
@@ -14,7 +16,7 @@ type CategoriesTypes = {
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch('http://localhost:8888/api/V1/categories/list')
+  const res = await fetch(`${BACKEND_API}/api/categorias/list`)
   const data = await res.json()
   const categories: CategoriesTypes[] = data.items
   return {

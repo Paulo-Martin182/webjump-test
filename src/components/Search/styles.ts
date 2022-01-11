@@ -22,7 +22,8 @@ export const CartIcon = styled(ShoppingCart)`
 `
 
 export const SearchInput = styled.input`
-  padding: 7px 10px;
+  padding: 14px 10px;
+  width: 300px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.08);
   border: 1px solid #959595;
   outline: none;
@@ -30,7 +31,7 @@ export const SearchInput = styled.input`
 
 export const SearchButton = styled.a`
   ${({ theme }) => css`
-    padding: 6px 15px;
+    padding: 13px 15px;
     background: ${theme.colors.ligthBlu};
     color: #ffff;
     font-size: 14px;

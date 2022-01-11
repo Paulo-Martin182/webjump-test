@@ -23,6 +23,22 @@ Este projeto usa muitas coisas como:
 	🚧  WEBJUMP 🚀 Em construção...  🚧
 </h4>
 
+## Sobre o projeto
+
+    Primeiramente para a busca dos dados, estou utilizando a renderização statica(SSG) de alguns dados como a lista
+de categorias, e para a busca de dados como os produtos estou utilizando Renderização do Lado do Servidor (SSR).
+
+    No fetch do menu recebo um path do server, e coloco como link e para renderizar os itens de cada categoria
+estou utilizando paginas dinamicas baseadas no ID do path menu, e com esse ID eu consigo buscar os itens da categoria
+
+    Na lista de produtos podem ser ordenadas de varias formas, pode ser mostradas como LIST ou GRID.
+
+## OBS
+
+Eu não consegui antes adicionar storybook em todos os componentes nem test de renderização com JEST por falta de tempo,
+pois realizei o teste no ultimo dia :c por problemas pessoais.
+
+
 
 ### Features
 
@@ -31,12 +47,20 @@ Este projeto usa muitas coisas como:
 - [x] Styles
 - [ ] Jest
 - [ ] Storybook
+- [ ] Cypress
 
 ## Começando
 
 Primeiro, garanta que o backend esteja rodando na porta localhost:8888 e então rode o servidor:
 
 ```bash
+npm install
+# or
+
+yarn
+
+>>>>>>>>>>>>>>>>>>>>>>>>
+
 npm run dev
 # or
 yarn dev
@@ -54,6 +78,23 @@ Abra [http://localhost:3000](http://localhost:3000) com seu navegador para ver o
 - `test:watch`: runs jest in watch mode
 - `storybook`: runs storybook on `localhost:6006`
 - `build-storybook`: create the build version of storybook
+
+
+## Editando com Storybook
+
+-- neste projeto fiz apenas um card de produto com meu proprio estilo e fiz algumas opções, apenas para demonstração
+aqui esta uma demonstração em imagem >
+
+###  Voce pode ir alterando
+
+- [x] Titulo
+- [x] Texto do Botão
+- [x] Cor das opções de cores
+- [x] Cor do circulo background
+- [x] Titulo da opção
+
+![alt text](https://github.com/Paulo-Martin182/webjump-test/public/storyex.png)
+
 
 ## Saber mais
 

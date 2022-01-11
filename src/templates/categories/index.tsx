@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import Filter from 'components/Filter'
 import Header from 'components/Header'
 import Menu from 'components/Menu'
@@ -9,10 +10,54 @@ import * as S from './styles'
 
 export default function CategoriesTemplate({
   items = [],
-
   categoriesMenu = [],
+  filters = [],
   path = ''
 }: ProductPerCategoryTypes) {
+  const FilterType = filters[0]
+  const [products, setProducts] = useState(items)
+  const [coresUn, setCores] = useState([] as any)
+  const colors = () => {
+    const cores = items.map((item) => {
+      /* return item.filter */
+      const selecor = item.filter.map((cor: any) => {
+        return cor.color
+      })
+      return selecor
+    })
+    setCores(cores)
+  }
+
+  useEffect(() => {
+    colors()
+  }, [])
+
+  useEffect(() => {
+    setProducts(items)
+  }, [items])
+
+  const filteredGender = (selectGender: string) => {
+    const freelancers = items
+    const javascript_freelancers = freelancers.filter(function (
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      freelancer: any
+    ) {
+      return freelancer.filter[0].gender == selectGender
+    })
+    setProducts(javascript_freelancers)
+  }
+
+  const filteredColor = (selectColor: string) => {
+    const freelancers = items
+    const javascript_freelancers = freelancers.filter(function (
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      freelancer: any
+    ) {
+      return freelancer.filter[0].color == selectColor
+    })
+    setProducts(javascript_freelancers)
+  }
+
   return (
     <S.Wrapper>
       <TopHeader />
@@ -21,10 +66,16 @@ export default function CategoriesTemplate({
       <MenuPath path={path} />
       <S.Main>
         <S.FilterBox>
-          <Filter categories={categoriesMenu} />
+          <Filter
+            filterType={FilterType}
+            categories={categoriesMenu}
+            SelectGender={filteredGender}
+            SelectColor={filteredColor}
+            colorList={coresUn}
+          />
         </S.FilterBox>
         <S.ItemsContainer>
-          <ProductGrid products={items} />
+          <ProductGrid products={products} />
         </S.ItemsContainer>
       </S.Main>
       <S.Content>

@@ -6,6 +6,11 @@ import theme from 'styles/theme'
 export const parameters = {
   nextRouter: {
     Provider: RouterContext.Provider
+  },
+  controls: {
+    matchers: {
+      color: /(background|colors|color)$/i
+    }
   }
 }
 

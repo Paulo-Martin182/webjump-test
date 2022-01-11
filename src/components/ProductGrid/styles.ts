@@ -105,9 +105,11 @@ export const CardProduct = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
-  min-width: 210px;
   padding: 15px;
   box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  width: 210px;
+  max-height: 360px;
   @media (max-width: 768px) {
     min-width: 150px;
     width: 100%;
@@ -122,9 +124,11 @@ export const ImageProduct = styled.div`
   height: 215px;
   margin-bottom: 8px;
   min-width: 180px;
+  overflow: hidden;
 `
 export const Image = styled.img`
   width: 120px;
+  object-fit: contain;
 `
 
 export const TitleProduct = styled.h3`

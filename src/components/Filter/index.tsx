@@ -1,14 +1,31 @@
 import { useRouter } from 'next/router'
 import { CategoriesTypes } from 'templates/home/types'
+import { ColorsGrid } from 'utils/ColorsSelect'
 import { TiposMock } from './mockTypesFIlter'
 import * as S from './styles'
 
-export type FilterTypes = {
-  categories: CategoriesTypes[]
+export type FiltersTypesOptions = {
+  color?: string
+  gender?: string
 }
 
-const Filter = ({ categories = [] }: FilterTypes) => {
-  const filterColor = true
+export type FilterTypes = {
+  categories: CategoriesTypes[]
+  filterType: FiltersTypesOptions
+  SelectGender: (value: string) => void
+  SelectColor: (value: string) => void
+  colorList: any[]
+}
+
+const Filter = ({
+  categories = [],
+  filterType,
+  SelectGender = () => null,
+  SelectColor = () => null,
+  colorList = []
+}: FilterTypes) => {
+  const filterColor = filterType.color
+  const filterGender = filterType.gender
   const router = useRouter()
 
   const PushLink = (link: number | string, path: string) => {
@@ -31,27 +48,27 @@ const Filter = ({ categories = [] }: FilterTypes) => {
         <>
           <S.TitleCategory>Cores</S.TitleCategory>
           <S.CategoryColorsList>
-            <S.CategoryColors>
-              <S.Colors color="#CB0D1F" />
-            </S.CategoryColors>
-            <S.CategoryColors>
-              <S.Colors color="#F26324" />
-            </S.CategoryColors>
-            <S.CategoryColors>
-              <S.Colors color="#27A3A9" />
-            </S.CategoryColors>
+            {colorList.map((item) => (
+              <S.CategoryColors key={item} onClick={() => SelectColor(item)}>
+                <S.Colors color={ColorsGrid(`${item}`)} />
+              </S.CategoryColors>
+            ))}
           </S.CategoryColorsList>
         </>
       ) : null}
 
-      <S.TitleCategory>Tipo</S.TitleCategory>
-      <S.List>
-        {TiposMock.map((item) => (
-          <S.Item key={item.id}>
-            <S.Text>{item.name}</S.Text>
-          </S.Item>
-        ))}
-      </S.List>
+      {!!filterGender && (
+        <>
+          <S.TitleCategory>Tipo</S.TitleCategory>
+          <S.List>
+            {TiposMock.map((item) => (
+              <S.Item key={item.id} onClick={() => SelectGender(item.name)}>
+                <S.Text>{item.name}</S.Text>
+              </S.Item>
+            ))}
+          </S.List>
+        </>
+      )}
     </S.Wrapper>
   )
 }

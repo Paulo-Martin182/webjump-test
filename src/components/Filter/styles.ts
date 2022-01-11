@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 
 export type ColorsFilterTypes = {
-  color: string
+  color?: string | undefined
 }
 
 export const Wrapper = styled.main``
@@ -43,6 +43,7 @@ export const CategoryColorsList = styled.ul`
   align-items: center;
   justify-content: start;
   margin-bottom: 25px;
+  flex-wrap: wrap;
 `
 export const CategoryColors = styled.li`
   list-style: none;
@@ -54,6 +55,7 @@ export const Colors = styled.div<ColorsFilterTypes>`
     height: 24px;
     background: ${color};
     border-radius: 2px;
+    margin: 5px 0;
     cursor: pointer;
   `}
 `
