@@ -5,7 +5,7 @@
 <p align="center">🚀 Teste para contratação webjump </p
 
 Um projeto [Next.js](https://nextjs.org/) para ser usado como teste da empresa  [WEBJUMP ](https://webjump.com.br/).
-## Oque foi utilizado?
+## O que foi utilizado?
 
 Este projeto usa muitas coisas como:
 
