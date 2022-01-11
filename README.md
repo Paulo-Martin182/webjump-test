@@ -35,7 +35,7 @@ estou utilizando paginas dinamicas baseadas no ID do path menu, e com esse ID eu
 
 ## OBS
 
-Eu não consegui antes adicionar storybook em todos os componentes nem test de renderização com JEST por falta de tempo,
+Eu não consegui seguir um bom gitflow, adicionar storybook em todos os componentes nem test de renderização com JEST por falta de tempo,
 pois realizei o teste no ultimo dia :c por problemas pessoais.
 
 
