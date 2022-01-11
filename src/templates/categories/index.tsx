@@ -16,7 +16,8 @@ export default function CategoriesTemplate({
 }: ProductPerCategoryTypes) {
   const FilterType = filters[0]
   const [products, setProducts] = useState(items)
-  const [coresUn, setCores] = useState([] as any)
+  const [coresUn, setCores] = useState([0] as any)
+
   const colors = () => {
     const cores = items.map((item) => {
       /* return item.filter */
@@ -30,7 +31,7 @@ export default function CategoriesTemplate({
 
   useEffect(() => {
     colors()
-  }, [])
+  }, [items])
 
   useEffect(() => {
     setProducts(items)

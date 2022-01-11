@@ -1,7 +1,6 @@
 import HomeTemplate from 'templates/home'
 import { InferGetStaticPropsType } from 'next'
-
-const BACKEND_API = process.env.API_BACKEND
+import list from 'mock-api/list.json'
 
 export default function Home({
   categories
@@ -16,8 +15,7 @@ type CategoriesTypes = {
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch(`${BACKEND_API}/api/categorias/list`)
-  const data = await res.json()
+  const data = list
   const categories: CategoriesTypes[] = data.items
   return {
     props: {

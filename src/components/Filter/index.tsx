@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useRouter } from 'next/router'
 import { CategoriesTypes } from 'templates/home/types'
 import { ColorsGrid } from 'utils/ColorsSelect'
@@ -48,8 +49,8 @@ const Filter = ({
         <>
           <S.TitleCategory>Cores</S.TitleCategory>
           <S.CategoryColorsList>
-            {colorList.map((item) => (
-              <S.CategoryColors key={item} onClick={() => SelectColor(item)}>
+            {colorList.map((item, index) => (
+              <S.CategoryColors key={index} onClick={() => SelectColor(item)}>
                 <S.Colors color={ColorsGrid(`${item}`)} />
               </S.CategoryColors>
             ))}
