@@ -5,7 +5,7 @@ import Menu from 'components/Menu'
 import MenuPath from 'components/MenuPath'
 import ProductGrid from 'components/ProductGrid'
 import TopHeader from 'components/TopHeader'
-import { ProductPerCategoryTypes } from 'pages/categoria/[categories]'
+import { ProductPerCategoryTypes } from 'pages/categoria/[id]'
 import * as S from './styles'
 
 export default function CategoriesTemplate({
@@ -20,7 +20,6 @@ export default function CategoriesTemplate({
 
   const colors = () => {
     const cores = items.map((item) => {
-      /* return item.filter */
       const selecor = item.filter.map((cor: any) => {
         return cor.color
       })

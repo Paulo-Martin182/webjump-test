@@ -1,5 +1,5 @@
 import * as S from './styles'
-import { ProductTypes } from 'pages/categoria/[categories]'
+import { ProductTypes } from 'pages/categoria/[id]'
 import { ChangeEvent, useEffect, useState } from 'react'
 import { OrderBy } from 'utils/FormatterOrder'
 

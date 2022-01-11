@@ -25,8 +25,8 @@ const Filter = ({
   SelectColor = () => null,
   colorList = []
 }: FilterTypes) => {
-  const filterColor = filterType.color
-  const filterGender = filterType.gender
+  const filterColor = filterType?.color
+  const filterGender = filterType?.gender
   const router = useRouter()
 
   const PushLink = (link: number | string, path: string) => {

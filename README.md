@@ -25,15 +25,17 @@ Este projeto usa muitas coisas como:
 
 ## Sobre o projeto
 
-    Primeiramente para a busca dos dados, estou utilizando a renderização statica(SSG) de alguns dados como a lista
+Primeiramente para a busca dos dados, estou utilizando a renderização statica(SSG) de alguns dados como a lista
 de categorias, e para a busca de dados como os produtos estou utilizando Renderização do Lado do Servidor (SSR).
 
-    No fetch do menu recebo um path do server, e coloco como link e para renderizar os itens de cada categoria
+No fetch do menu recebo um path do server, e coloco como link e para renderizar os itens de cada categoria
 estou utilizando paginas dinamicas baseadas no ID do path menu, e com esse ID eu consigo buscar os itens da categoria.
 utilizei o SSR nos itens apenas para mostrar a renderizção do lado servidor... acredito que para uma gama de produtos,
 fixos seria melhor uma renderização statica para não pesar o server, mas como são poucos itens é isso :)
 
-    Na lista de produtos podem ser ordenadas de varias formas, pode ser mostradas como LIST ou GRID.
+Na lista de produtos podem ser ordenadas de varias formas, pode ser mostradas como LIST ou GRID.
+
+    Para Rodar com SSR acesse a branch ```bash git checkout master ```
 
 ## OBS
 
@@ -53,7 +55,7 @@ pois realizei o teste no ultimo dia :c por problemas pessoais.
 
 ## Começando
 
-Primeiro, garanta que o backend esteja rodando na porta localhost:8888 e então rode o servidor:
+Para rodar o projeto é importante conferir se o node está instalado, depois só rodar os comandos:
 
 ```bash
 npm install
